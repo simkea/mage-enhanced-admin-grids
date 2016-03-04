@@ -29,21 +29,22 @@ Special thanks to : [paales](https://github.com/paales) for the current design a
 ### Final steps before beta release
 - [ ] last waves of code refactoring/cleanup and complexity reduction (focus on [Scrutinizer hot spots](https://scrutinizer-ci.com/g/mage-eag/mage-enhanced-admin-grids/code-structure/1.0.0-wip/hot-spots))
 - [ ] **editor system refactoring** :
-    - [ ] separate responsibilities into different models, introduce callbacks
-    - [ ] ~~implement custom columns editability~~ (later)
-    - [ ] ~~make the inventory columns from the products grids be editable~~ (later)
+    - [ ] separate responsibilities into different models, introduce callbacks **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
+    - [ ] implement custom columns editability **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
+    - [ ] implement order address columns editability **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
+    - [ ] implement inventory columns editability **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
     - [ ] create a spreadsheet summarizing the compatibility of each editor across the different Magento versions (use three different states : "untested", "tested and functional", "tested with problems" - provide links to the related issues -)
     - [ ] start filling up the compatibility spreadsheet
 - [ ] **JS code refactoring** :
     - [ ] remove `CDATA` sections
     - [ ] refactor and optimize code when possible
     - [ ] review the code style (follow some best practices)
-    - [ ] ~~write comments (use [JSDoc](http://usejsdoc.org/index.html))~~ (probably not worth the time)
+    - [ ] ~~write comments (use [JSDoc](http://usejsdoc.org/index.html))~~ **(probably not worth the time)**
     - [ ] implement an object manager, to remove as much clutter as possible from the global scope, and automatically cleanup unneeded/overridable objects (especially for Ajax grids)
-- [ ] move the columns list form to dedicated window, as for the other forms (avoid cluttering any external wrapping form with a lot of parameters)
-- [ ] rework the profiles bar so that the number of displayed profiles is adapted to the available width
+- [ ] move the columns list form to dedicated window, as for the other forms (avoid cluttering any external wrapping form with a lot of parameters) **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
+- [ ] rework the profiles bar so that the number of displayed profiles is adapted to the available width **(available in the [edge branch](https://github.com/mage-eag/mage-enhanced-admin-grids/tree/1.0.0-wip-edge))**
 - [ ] rework the "Access All" profiles permission (make all the profiles be available from everywhere, except in the bar)
-- [ ] ~~rework the sales items columns (implement the advanced text filter, improve their extensibility, and allow to display a customizable value when exported)~~ (later)
+- [ ] ~~rework the sales items columns (implement the advanced text filter, improve their extensibility, and allow to display a customizable value when exported)~~ **(later)**
 
 ### Continuous changes (primary todo list)
 - write a FAQ page with the most common issues and questions
