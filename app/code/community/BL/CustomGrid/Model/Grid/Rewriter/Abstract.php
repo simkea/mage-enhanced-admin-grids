@@ -227,20 +227,12 @@ abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_
             return parent::_exportIterateCollection($callback, $args);
         } else {
             $config = $this->_blcg_exportConfig;
-            
+
             if (!is_null($this->_blcg_exportedCollection)) {
-                $originalCollection = $this->_blcg_exportedCollection;
+                $collection = $this->_blcg_exportedCollection;
             } else {
                 $originalCollection = $this->getCollection();
-            }
-            if ($originalCollection->isLoaded()) {
-                $errorMessage = Mage::helper(\'customgrid\')
-                    ->__(
-                        \'This grid does not seem to be compatible with the custom export.\'
-                            . \' If you wish to report this problem, please indicate this class name : "%s"\',
-                        get_class($this)
-                    );
-                Mage::throwException($errorMessage);
+                $collection = $this->_blcg_exportedCollection;
             }
             
             $pageSize = (isset($this->_exportPageSize) ? $this->_exportPageSize : 1000);
@@ -259,9 +251,8 @@ abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_
             $break = false;
             $first = false;
             $count = null;
-            
+
             while ($break !== true) {
-                $collection = clone $originalCollection;
                 $collection->setPageSize($pageSize);
                 $collection->setCurPage($page);
                 

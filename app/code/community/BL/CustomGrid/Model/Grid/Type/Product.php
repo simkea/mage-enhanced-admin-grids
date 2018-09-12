@@ -496,8 +496,7 @@ class BL_CustomGrid_Model_Grid_Type_Product extends BL_CustomGrid_Model_Grid_Typ
         Varien_Data_Collection $collection
     ) {
         if ($this->getMustCaptureExportedCollection()) {
-            $clonedCollection = clone $collection;
-            $gridBlock->blcg_setExportedCollection($clonedCollection);
+            $gridBlock->blcg_setExportedCollection($collection);
         }
         return $this;
     }
