@@ -52,7 +52,15 @@ function saveAndContinueEdit(url) {
                 ';
             }
         }
-        
+
+        $this->removeButton('save');
+
+        $this->_addButton('save', array(
+            'label'     => Mage::helper('adminhtml')->__('Save'),
+            'onclick'   => 'editForm.submit(\'' . $this->getUrl('*/*/save') . '\');',
+            'class'     => 'save',
+        ), 1);
+
         return $this;
     }
     
